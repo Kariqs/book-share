@@ -1,0 +1,12 @@
+p {
+  text-align: center;
+  font-weight: bold;
+  background-color: rgba(58, 58, 58, 0.7);
+  font-size: 2rem;
+  color:white;
+  width: 80%;
+  max-width: 50rem;
+  margin: auto;
+  margin-top: 6rem;
+  padding: 2rem;
+}

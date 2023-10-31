@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('includes/head') %>
+    <link rel="stylesheet" href="styles/sharebook.css">
+</head>
+<body>
+  <%- include('includes/header') %>
+  
+  <form action="/sharebook" method="post">
+    <h2>Share a book.</h2>
+    <label for="book-title">Title of the book.</label>
+    <input type="text" name="title" id="book-title" required>
+    <label for="book-author">Author of the book.</label>
+    <input type="text" name="author" id="book-author" required>
+    <label for="book-pages">Number of pages.</label>
+    <input type="number" name="pages" id="book-pages" required>
+    <label for="book-price">Price of the book (Kshs).</label>
+    <input type="number" name="price" id="book-price" required>
+    <label for="book-about">What does the book talk about?</label>
+    <textarea name="about" id="book-about" cols="20" rows="10"></textarea>
+    <button type="submit">Share</button>  
+</form>
+</body>
+</html>

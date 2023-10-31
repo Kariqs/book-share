@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('includes/head') %>
+        <link rel="stylesheet" href="styles/findbook.css">
+</head>
+
+<body>
+    <%- include('includes/header') %>
+
+   <% if (numberOfBooks === 0) { %>
+    <p id="booksfound">Books have not been added yet. Be the first one to <a href="/sharebook">add a book</a>.</p>
+   <% }else{%>
+      <p id="booksfound">Find the book that you will read next. Have a nice read. </p>
+    <p id="booksfound"> We found <%= numberOfBooks%> books</p>
+        <ul id="findbook">
+            <% for(const book of books) {%>
+                <li>
+                    <h1>Title: <%= book.title%>
+                    </h1>
+                    <h2>Author: <%= book.author%>
+                    </h2>
+                    <div>
+                        <p>Number of Pages: <%= book.pages%>
+                        </p>
+                        <p>Price: Kshs.<%= book.price%>
+                        </p>
+                        <p>Theme: <%= book.about%>
+                        </p>
+                    </div>
+                </li>
+                <%}%>
+        </ul>
+  <% } %>
+    
+    
+  
+</body>
+
+</html>
