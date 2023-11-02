@@ -16,3 +16,9 @@ div li{
 div img{
     object-fit: cover;   
 }
+
+@media(max-width:48rem){
+    div{
+        flex-direction: column;
+    }
+}
