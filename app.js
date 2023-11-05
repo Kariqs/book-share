@@ -2,6 +2,8 @@ const fs = require("fs");
 
 const path = require("path");
 
+const uuid = require('uuid');
+
 const express = require("express");
 
 const app = express();
@@ -24,13 +26,19 @@ app.get("/sharebook", function (req, res) {
 });
 
 app.post("/sharebook", function (req, res) {
+  //path to where we are supposed to store the books.
   const filePath = path.join(__dirname, "data", "books.json");
-  const book = req.body;
+  const book = req.body;//fetch all data from the form.
+  book.id = uuid.v4();//generate unique ids for every book.
+  //read the data that is in the filepath
   const fileData = fs.readFileSync(filePath);
+  //parse the data from the file path
   const existingData = JSON.parse(fileData);
+  //add the new book to the file path.
   existingData.push(book);
+  //write the file path.
   fs.writeFileSync(filePath, JSON.stringify(existingData));
-
+  //redirect to another to avoid form resubmission when the page is refreshed.
   res.redirect("/success");
 });
 
@@ -46,5 +54,10 @@ app.get("/findbook", function (req, res) {
 
   res.render("findbook", { numberOfBooks: existingData.length, books:existingData });
 });
+
+app.get('/findbook/:id', function(req,res){
+  const bookId = req.params.id;
+  res.render('book-details',{rid:bookId});
+})
 
 app.listen(3000);
