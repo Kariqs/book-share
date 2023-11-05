@@ -1,1 +1,18 @@
-[{"title":"The Rational Male","author":"Rollo Tommasi","pages":"246","price":"2500","about":"Masculinity.","id":"c2062aa9-9fcf-482b-9d8e-0c9d0f13ae33"}]
+[
+    {
+        "title": "The Rational Male",
+        "author": "Rollo Tommasi",
+        "pages": "246",
+        "price": "2500",
+        "about": "Masculinity.",
+        "id": "c2062aa9-9fcf-482b-9d8e-0c9d0f13ae33"
+    },
+    {
+        "title": "5AM Club",
+        "author": "Robin Sharma",
+        "pages": "236",
+        "price": "1500",
+        "about": "The book talks about early morning habits and how they have an impact on one's life and their productivity. I would recommend it to anyone who is struggling with bad waking up habits including me.",
+        "id": "4cae0b6c-f734-4d78-8f92-e1bde8d1c7fa"
+    }
+]

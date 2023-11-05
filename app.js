@@ -2,7 +2,7 @@ const fs = require("fs");
 
 const path = require("path");
 
-const uuid = require('uuid');
+const uuid = require("uuid");
 
 const express = require("express");
 
@@ -28,8 +28,8 @@ app.get("/sharebook", function (req, res) {
 app.post("/sharebook", function (req, res) {
   //path to where we are supposed to store the books.
   const filePath = path.join(__dirname, "data", "books.json");
-  const book = req.body;//fetch all data from the form.
-  book.id = uuid.v4();//generate unique ids for every book.
+  const book = req.body; //fetch all data from the form.
+  book.id = uuid.v4(); //generate unique ids for every book.
   //read the data that is in the filepath
   const fileData = fs.readFileSync(filePath);
   //parse the data from the file path
@@ -52,12 +52,24 @@ app.get("/findbook", function (req, res) {
   const fileData = fs.readFileSync(filePath);
   const existingData = JSON.parse(fileData);
 
-  res.render("findbook", { numberOfBooks: existingData.length, books:existingData });
+  res.render("findbook", {
+    numberOfBooks: existingData.length,
+    books: existingData,
+  });
 });
 
-app.get('/findbook/:id', function(req,res){
+app.get("/findbook/:id", function (req, res) {
+  //get the unique id 
   const bookId = req.params.id;
-  res.render('book-details',{rid:bookId});
-})
+  const filePath = path.join(__dirname, "data", "books.json");
+  const fileData = fs.readFileSync(filePath);
+  const numberOfBooks = JSON.parse(fileData);
+  //loop through all the books to fine the book with the same id as the one found above
+  for (const book of numberOfBooks) {
+    if (book.id === bookId) {
+     return res.render("book-details", { book: book });
+    }
+  }
+});
 
 app.listen(3000);

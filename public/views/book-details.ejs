@@ -6,8 +6,11 @@
 </head>
 <body>
     <%- include('includes/header') %> 
-    <h1>TITLE OF THE BOOK <%= rid %></h1>
-    <h2>AUTHOR OF THE BOOK</h2>
+   <div id="book-detail">
+    <h1> <%=book.title %></h1>
+    <h2><%=book.author%></h2>
+    <p><%=book.about%></p>
     <a id="link" href="https://amazon.com">Find Book</a>
+   </div>
 </body>
 </html>

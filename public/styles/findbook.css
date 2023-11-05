@@ -3,28 +3,28 @@
     text-align: center;
     font-size: 1.5rem;
 }
-#findbook {
+#findbook,#book-detail {
   width: 80%;
   max-width: 50rem;
   list-style: none;
   margin: auto;
 }
-#findbook li {
+#findbook li,#book-detail {
   width: 100%;
   background-color: rgba(58, 58, 58, 0.7);
   padding: 1rem;
   margin-bottom: 0.5rem;
 }
-#findbook h1 {
+#findbook h1,#book-detail h1 {
   color: white;
   font-size: 2rem;
 }
-#findbook h2 {
+#findbook h2,#book-detail h2 {
   color: white;
   font-size: 1.5rem;
 }
 
-#findbook p {
+#findbook p,#book-detail p {
   color: white;
   font-size: 1rem;
 }
@@ -35,6 +35,7 @@
   padding: 0.5rem;
   text-decoration: none;
 }
+
 
 @media(max-width:48rem){
   #booksfound{
