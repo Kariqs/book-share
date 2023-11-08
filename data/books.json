@@ -14,5 +14,13 @@
         "price": "1500",
         "about": "The book talks about early morning habits and how they have an impact on one's life and their productivity. I would recommend it to anyone who is struggling with bad waking up habits including me.",
         "id": "4cae0b6c-f734-4d78-8f92-e1bde8d1c7fa"
+    },
+    {
+        "title": "Cashflow Quadrant",
+        "author": "Robert Kiyosaki",
+        "pages": "233",
+        "price": "1500",
+        "about": "The book talks about financial literacy and how to gauge in which cashflow quadrant you are.",
+        "id": "a0228f0a-f876-4e2e-aad5-e75b64c603e9"
     }
 ]
